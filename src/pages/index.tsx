@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Crack The Code</title>
         <meta name="description" content="Crack the Password" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

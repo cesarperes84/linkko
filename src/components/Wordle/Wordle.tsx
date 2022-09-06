@@ -13,10 +13,10 @@ const Wordle = ({ wordList, solution }: {
     <LockIcon fontSize="large" style={{ fontSize: "80px" }} />
     <h1 className="center" style={{ fontFamily: 'Roboto Condensed', fontSize: '22px' }}>
       CRACK THE
-      <br />PASSWORD
+      <br />CODE
     </h1>
     </div>
-    <p>A numeric lock has 3 digit key </p>
+    <p style={{ textAlign: 'center' }}>A numeric lock has 3 digit key, <br /> made up of 3 distinct digits from 0 to 9. </p>
     <Board />
     <div className="center">
       <Keyboard />

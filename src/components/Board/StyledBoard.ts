@@ -34,31 +34,3 @@ export const Item = styled(Box)`
   }
 `;
 
-export const SubItem = styled(Box)`
-  .gray {
-    background-color: #363636;
-  }
-  .yellow {
-    background-color: #aa9f00;
-  }
-  .green {
-    background-color: #43aa13;
-  }
-
-  .flip {
-  animation: flip .4s ease-in-out;
-}
-
-@keyframes flip {
-  0% {
-    transform: perspective(400px) rotateX(90deg);
-    opacity: 0;
-  }
-  100% {
-    transform: perspective(400px) rotateX(0deg);
-    opacity: 1;
-  }
-}
-
-`;
-

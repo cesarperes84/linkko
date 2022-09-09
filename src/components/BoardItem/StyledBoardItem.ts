@@ -30,7 +30,6 @@ export const SubItem = styled(Box)`
     background-color: #43aa13;
   }
 
-
   .flip {
     animation: flip .4s ease-in-out;
   }

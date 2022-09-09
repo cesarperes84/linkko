@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import WordleContext from "../../contexts/WordleContext";
+import CodelyContext from "../../contexts/CodelyContext";
 import * as S from "./StyledBoard";
 import { wordList } from "../../utility/wordList";
 import BoardItem from "../BoardItem";
 
 const Board = () => {
-  const { state, setState } = useContext(WordleContext);
+  const { state, setState } = useContext(CodelyContext);
   const {
     emptyCells,
     isSubmitted,
@@ -32,19 +32,19 @@ const Board = () => {
   }, [isGameOver, isSubmitted, nbAttempts, userSolution]);
 
   useEffect(() => {
-    if (round.length === 4) {
+    if (round.length === 4 && isSubmitted) {
       setState((prevState: { isGameOver: boolean }) => ({
         ...prevState,
         isGameOver: true,
       }));
     }
-  }, [round.length, setState]);
+  }, [isSubmitted, round, setState]);
 
   return (
     <>
       <S.Board>
         <ul>
-          {[1, 2, 3].map((row, j) => (
+          {[1, 2, 3, 4].map((row, j) => (
             <li className="d-flex" key={j}>
               {emptyCells.map((col, i) => {
                 return (

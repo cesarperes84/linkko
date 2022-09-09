@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { creatArr } from "../utility/helper";
-import WordleContext from "./WordleContext";
+import CodelyContext from "./CodelyContext";
 import { initState } from "./initState";
 
 
-export const WordleStore = ({ children, wordList, solution, nbRows, nbCols }: any) => {
+export const CodelyStore = ({ children, wordList, solution, nbRows, nbCols }: any) => {
   const [state, setState] = useState({
     ...initState,
     wordList,
@@ -13,7 +13,7 @@ export const WordleStore = ({ children, wordList, solution, nbRows, nbCols }: an
     emptyCells: creatArr(nbCols || 3)
   });
 
-  return <WordleContext.Provider value={{ state, setState }}>
+  return <CodelyContext.Provider value={{ state, setState }}>
     {children}
-  </WordleContext.Provider>
+  </CodelyContext.Provider>
 };

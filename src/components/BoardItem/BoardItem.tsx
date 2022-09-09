@@ -26,36 +26,13 @@ const BoardItem = ({
 }) => {
   const [state, setState] = useState(initState);
 
-  /* const classNameSubItem = ({ i, j }: { i: number; j: number }) => {
-   let item = "";
-      if (attempt[i]?.charAt(j) === solution.charAt(i)) {
-        item = "flip green";
-      } else if (solution.includes(attempt[i])) {
-        item = "flip yellow";
-      } else {
-        item = "flip gray";
-      }
-    if (!isSubmitted && !isGameOver) {
-      item = "";
-    }
-    return item;
-  }; */
-
   useEffect(() => {
     let className = "";
-
-
     if (isSubmitted && !isGameOver && j < round.length && round.length-1 === j) {
-      // className = "flip gray";
-      console.log('---');
-      console.log('j', j);
-      console.log('attempt[i]', attempt[i]);
-      console.log('solution', solution);
-      console.log('round.length', round.length);
-      if (solution.includes(attempt[i])) {
-        className = "flip yellow";
-      } else if (attempt[i] === solution.charAt(i)) {
+      if (attempt[i] === solution.charAt(i)) {
         className = "flip green";
+      } else if (solution.includes(attempt[i])) {
+        className = "flip yellow";
       } else {
         className = "flip gray";
       }

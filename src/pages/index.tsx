@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Wordle from '../components/Wordle';
+import Main from '../components/Main';
 import { wordList } from '../utility/wordList';
 
 const Home: NextPage = () => {
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Wordle
+        <Main
           wordList={wordList}
           solution={wordList[0]}
         />

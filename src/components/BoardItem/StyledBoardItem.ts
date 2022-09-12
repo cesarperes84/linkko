@@ -3,8 +3,8 @@ import { styled } from '@mui/material/styles';
 
 
 export const SubItem = styled(Box)`
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 4px;
   display: flex;
   justify-content: center;

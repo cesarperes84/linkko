@@ -3,6 +3,7 @@ import CodelyContext from "../../contexts/CodelyContext";
 import * as S from "./StyledBoard";
 import { wordList } from "../../utility/wordList";
 import BoardItem from "../BoardItem";
+import Alert from '@mui/material/Alert';
 
 const Board = () => {
   const { state, setState } = useContext(CodelyContext);
@@ -65,6 +66,9 @@ const Board = () => {
           ))}
         </ul>
       </S.Board>
+      {round.length >= 1 && <Alert severity="error" variant="outlined" style={{ marginBottom: "5px", width: "320px" }}>{`The 3 digits are distinct!`}</Alert>}
+      {round.length >= 2 && <Alert severity="error" variant="outlined" style={{ marginBottom: "5px", width: "320px" }}>{`First digit is ${solution[0] % 2 === 0 ? 'even' : 'odd'}!`}</Alert>}
+      {round.length === 3 && <Alert severity="error" variant="outlined" style={{ marginBottom: "5px", width: "320px" }}>{`Last digit is ${solution[2] % 2 === 0 ? 'even' : 'odd'}!`}</Alert>}
       {isGameOver && <pre>{`GAME OVER!!! Solution is: ${solution}`}</pre>}
     </>
   );

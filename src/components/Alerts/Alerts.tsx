@@ -35,50 +35,50 @@ const Alerts = ({
     isPerfectSquare(5 * solution[1] * solution[1] - 4);
 
   return (
-    <>
+    <div style={{ marginTop: "8px" }}>
       {round.length >= 1 && (
         <Alert
-          severity="error"
+          severity="warning"
           variant="outlined"
           style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >{`The 3 digits are ${
+        >{`Hint: the 3 digits are ${
           hasDistinctNumbers() ? "NOT" : ""
         } distinct!`}</Alert>
       )}
       {round.length >= 1 && isPrime() && (
         <Alert
-          severity="error"
+          severity="warning"
           variant="outlined"
           style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >The code is prime number!</Alert>
+        >Hint: the code is prime number!</Alert>
       )}
       {round.length >= 2 && (
         <Alert
-          severity="error"
+          severity="warning"
           variant="outlined"
           style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >{`First digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
+        >{`Hint: first digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
       {(round.length >= 2 && isFibonacci()) && (
         <Alert
-          severity="error"
+          severity="warning"
           variant="outlined"
           style={{ marginBottom: "5px", width: "250px", fontSize: "10px", height: "40px",
           padding: "0 10px" }}
-        >Second digit belong fibonacci</Alert>
+        >Hint: second digit belong fibonacci</Alert>
       )}
       {round.length === 3 && (
         <Alert
-          severity="error"
+          severity="warning"
           variant="outlined"
           style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >{`Last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
+        >{`Hint: last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
-    </>
+    </div>
   );
 };
 

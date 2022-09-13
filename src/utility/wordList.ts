@@ -1,1 +1,1 @@
-export const wordList = ["459"];
+export const wordList = ["743"];

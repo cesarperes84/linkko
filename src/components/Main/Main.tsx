@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Board from "../Board";
 import Keyboard from "../Keyboard";
-import LockIcon from "@mui/icons-material/Lock";
+import KeyIcon from "@mui/icons-material/Key";
 import { useCodlyContext } from "../../contexts/CodlyContext";
 
 const Main = () => {
@@ -24,13 +24,15 @@ const Main = () => {
 
   return (
     <>
-      <div style={{ display: "flex", height: "45px" }}>
-        <LockIcon fontSize="large" style={{ fontSize: "40px" }} />
+      <div style={{ display: "flex", height: "35px" }}>
+        <div style={{ background: "#00af80", height: "30px", width: "30px", borderRadius: "40px", padding: "5px"}}>
+          <KeyIcon fontSize="large" style={{ fontSize: "20px" }} />
+        </div>
         <h1
           className="center"
-          style={{ fontFamily: "Roboto Condensed", fontSize: "22px" }}
+          style={{ fontFamily: "'Fugaz One'", fontSize: "26px", fontWeight: "normal", marginLeft: "5px" }}
         >
-          CODLY
+          Codly
         </h1>
       </div>
       <p style={{ textAlign: "center", width: '320px' }}>

@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 export const Keyboard = styled(Box)`
-  margin-top: 40px;
+  margin-top: 20px;
   background: #222;
   border-radius: 4px;
   padding: 5px;

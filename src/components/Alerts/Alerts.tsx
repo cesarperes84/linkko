@@ -41,7 +41,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "320px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
         >{`The 3 digits are ${
           hasDistinctNumbers() ? "NOT" : ""
         } distinct!`}</Alert>
@@ -50,8 +50,8 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "320px" }}
-        >{`The 3 digits sequence is ${
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+        >{`The all code is ${
           isPrime() ? "" : "NOT"
         } prime number!`}</Alert>
       )}
@@ -59,21 +59,21 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "320px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
         >{`First digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
       {round.length >= 2 && (
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "320px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
         >{`Second digit ${isFibonacci() ? "" : "NOT"} belong fibonacci`}</Alert>
       )}
       {round.length === 3 && (
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "320px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
         >{`Last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
     </>

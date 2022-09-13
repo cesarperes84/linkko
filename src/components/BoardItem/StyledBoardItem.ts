@@ -3,15 +3,16 @@ import { styled } from '@mui/material/styles';
 
 
 export const SubItem = styled(Box)`
-  width: 2em;
-  height: 2em;
+  width: 1em;
+  height: 1em;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 6px;
   border: 6px solid rgb(78, 78, 78);
-  font-size: 2.5em;
+  font-size: 26px;
+  padding: 0.8em;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;

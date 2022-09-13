@@ -1,66 +1,25 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
-import CodelyContext from "../../contexts/CodelyContext";
+import React, { useCallback, useEffect } from "react";
 import { middleRow, topRow, bottomRow } from "./constants";
+import {  Types } from '../../reducers/reducersCodly';
 import * as S from "./StyledKeyboard";
 
-export default function Keyboard() {
-  const { state, setState } = useContext(CodelyContext);
-
+export default function Keyboard({ dispatchCodly, isGameOver }: {
+  isGameOver: boolean,
+  dispatchCodly: any;
+}) {
   const handleKeys = (key: string) => {
-    if (state.isGameOver) return;
+    if (isGameOver) return;
 
     if (key === "Enter") {
-      setState(
-        (prevState: {
-          round: any;
-          userSolution: string | any[];
-          nbCols: number;
-          rowIndex: number;
-          nbAttempts: number;
-          colIndex: any;
-        }) => {
-          const isUserSolutionInWordList = true;
-          const isUserSolutionValidLen =
-            prevState.userSolution.length >= prevState.nbCols;
-
-          let isValidSolution = [
-            isUserSolutionInWordList,
-            isUserSolutionValidLen,
-          ];
-          let isValid = isValidSolution.every((v) => v);
-          return {
-            ...prevState,
-            userSolution: isValid ? "" : prevState.userSolution,
-            rowIndex: isValid ? prevState.rowIndex + 1 : prevState.rowIndex,
-            round: [...prevState.round, prevState.userSolution],
-            isSubmitted: true,
-          };
-        }
-      );
+      dispatchCodly({ type: Types.SetEnterKey });
     }
 
     if (key === "Backspace" || key === "←") {
-      setState((prevState: { userSolution: string; colIndex: number }) => ({
-        ...prevState,
-        userSolution: prevState.userSolution.slice(0, -1) + "",
-        isSubmitted: false,
-      }));
+      dispatchCodly({ type: Types.SetBackspaceKey, payload: key  });
     }
 
     if (/[0-9]/gi.test(key) && key.length === 1) {
-      setState(
-        (prevState: {
-          userSolution: string;
-          nbCols: any;
-          colIndex: number;
-        }) => ({
-          ...prevState,
-          userSolution:
-            prevState.userSolution.slice(0, prevState.nbCols) +
-            key.toLowerCase(),
-          isSubmitted: false,
-        })
-      );
+      dispatchCodly({ type: Types.SetAnyKey, payload: key  });
     }
   };
 

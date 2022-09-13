@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./StyledBoardItem";
+import { BoardItemProps } from "./types";
 
 const initState = {
-  className: 'lightGray',
+  className: "lightGray",
 };
 
 const BoardItem = ({
@@ -14,21 +15,17 @@ const BoardItem = ({
   i,
   j,
   round,
-}: {
-  isSubmitted: boolean;
-  isGameOver: boolean;
-  solution: string;
-  attempt: any;
-  userSolution: any;
-  i: number;
-  j: number;
-  round: any;
-}) => {
+}: BoardItemProps) => {
   const [state, setState] = useState(initState);
 
   useEffect(() => {
     let className = "";
-    if (isSubmitted && !isGameOver && j < round.length && round.length-1 === j) {
+    if (
+      isSubmitted &&
+      !isGameOver &&
+      j < round.length &&
+      round.length - 1 === j
+    ) {
       if (attempt[i] === solution.charAt(i)) {
         className = "flip green";
       } else if (solution.includes(attempt[i])) {
@@ -36,19 +33,18 @@ const BoardItem = ({
       } else {
         className = "flip gray";
       }
-      setState((prevState: { className: string; }) => ({
+      setState((prevState: { className: string }) => ({
         ...prevState,
         className,
       }));
     }
     if (!isGameOver && j === round.length) {
       className = "";
-      setState((prevState: { className: string; }) => ({
+      setState((prevState: { className: string }) => ({
         ...prevState,
         className,
       }));
     }
-
   }, [attempt, i, isGameOver, isSubmitted, j, round, round.length, solution]);
 
   return (

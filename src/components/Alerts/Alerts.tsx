@@ -52,7 +52,7 @@ const Alerts = ({
           variant="outlined"
           style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >{`The all code is ${
+        >{`The code is ${
           isPrime() ? "" : "NOT"
         } prime number!`}</Alert>
       )}

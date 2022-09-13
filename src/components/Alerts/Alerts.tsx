@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Alert from "@mui/material/Alert";
-
 import { AlertsProps } from "./types";
 
 const Alerts = ({
@@ -9,7 +8,7 @@ const Alerts = ({
 }: AlertsProps) => {
 
   const hasDistinctNumbers = () => {
-    return Boolean(
+    return solution && Boolean(
       solution[0] === solution[1] ||
         solution[1] === solution[2] ||
         solution[0] === solution[2]
@@ -41,7 +40,8 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          padding: "0 10px" }}
         >{`The 3 digits are ${
           hasDistinctNumbers() ? "NOT" : ""
         } distinct!`}</Alert>
@@ -50,7 +50,8 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          padding: "0 10px" }}
         >{`The all code is ${
           isPrime() ? "" : "NOT"
         } prime number!`}</Alert>
@@ -59,21 +60,24 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          padding: "0 10px" }}
         >{`First digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
       {round.length >= 2 && (
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "10px", height: "40px",
+          padding: "0 10px" }}
         >{`Second digit ${isFibonacci() ? "" : "NOT"} belong fibonacci`}</Alert>
       )}
       {round.length === 3 && (
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px" }}
+          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          padding: "0 10px" }}
         >{`Last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
     </>

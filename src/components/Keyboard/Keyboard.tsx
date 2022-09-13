@@ -73,7 +73,7 @@ export default function Keyboard({ dispatchCodly, isGameOver }: {
             onClick={() => {
               onKeyboard(letter);
             }}
-            style={{ width: "120px" }}
+            style={{ width: "90px" }}
           >
             {letter}
           </S.Key>

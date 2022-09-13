@@ -24,8 +24,8 @@ const Main = () => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <LockIcon fontSize="large" style={{ fontSize: "60px" }} />
+      <div style={{ display: "flex", height: "45px" }}>
+        <LockIcon fontSize="large" style={{ fontSize: "40px" }} />
         <h1
           className="center"
           style={{ fontFamily: "Roboto Condensed", fontSize: "22px" }}
@@ -33,8 +33,8 @@ const Main = () => {
           CODLY
         </h1>
       </div>
-      <p style={{ textAlign: "center" }}>
-        Crack the code. A numeric lock has 3 digit key, <br /> from 0 to 9. You
+      <p style={{ textAlign: "center", width: '320px' }}>
+        Crack the code. A numeric lock has 3 digit key, from 0 to 9. You
         have 4 CHANCES. Good Lucky!!!
       </p>
       <Board

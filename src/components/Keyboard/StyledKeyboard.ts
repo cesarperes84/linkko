@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 export const Keyboard = styled(Box)`
-  margin-top: 60px;
+  margin-top: 40px;
   background: #222;
   border-radius: 4px;
   padding: 5px;
@@ -26,15 +26,15 @@ export const List = styled(Box)`
 `;
 
 export const Key = styled(Box)`
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  padding: 7px 7px;
+  padding: 2px 7px;
   background-color: #363636;
   border: none;
   color: #fff;
   cursor: pointer;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   margin: 0 4px;
   text-align: center;
   border-radius: 4px;

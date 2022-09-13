@@ -40,7 +40,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
         >{`The 3 digits are ${
           hasDistinctNumbers() ? "NOT" : ""
@@ -50,7 +50,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
         >The code is prime number!</Alert>
       )}
@@ -58,7 +58,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
         >{`First digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
@@ -66,7 +66,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "10px", height: "40px",
+          style={{ marginBottom: "5px", width: "250px", fontSize: "10px", height: "40px",
           padding: "0 10px" }}
         >Second digit belong fibonacci</Alert>
       )}
@@ -74,7 +74,7 @@ const Alerts = ({
         <Alert
           severity="error"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
+          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
         >{`Last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}

@@ -65,6 +65,11 @@ const BoardItem = ({
           round.length === j &&
           userSolution[i] /*  exibe o jogo atual */
       }
+       {
+        isSubmitted &&
+          isGameOver &&
+          round[j]?.charAt(i) /*  exibe o jogo finalizado */
+      }
     </S.SubItem>
   );
 };

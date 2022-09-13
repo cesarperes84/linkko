@@ -46,15 +46,13 @@ const Alerts = ({
           hasDistinctNumbers() ? "NOT" : ""
         } distinct!`}</Alert>
       )}
-      {round.length >= 1 && (
+      {round.length >= 1 && isPrime() && (
         <Alert
           severity="error"
           variant="outlined"
           style={{ marginBottom: "5px", width: "220px", fontSize: "12px", height: "40px",
           padding: "0 10px" }}
-        >{`The code is ${
-          isPrime() ? "" : "NOT"
-        } prime number!`}</Alert>
+        >The code is prime number!</Alert>
       )}
       {round.length >= 2 && (
         <Alert
@@ -64,13 +62,13 @@ const Alerts = ({
           padding: "0 10px" }}
         >{`First digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
       )}
-      {round.length >= 2 && (
+      {(round.length >= 2 && isFibonacci()) && (
         <Alert
           severity="error"
           variant="outlined"
           style={{ marginBottom: "5px", width: "220px", fontSize: "10px", height: "40px",
           padding: "0 10px" }}
-        >{`Second digit ${isFibonacci() ? "" : "NOT"} belong fibonacci`}</Alert>
+        >Second digit belong fibonacci</Alert>
       )}
       {round.length === 3 && (
         <Alert

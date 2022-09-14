@@ -79,11 +79,13 @@ ul {
 }
 
 pre {
-  background: #e91e63;
+  background: #00af80;
   padding: 10px;
-  width: 220px;
+  width: 130px;
   border-radius: 4px;
   text-align: center;
+  position: absolute;
+  top: 225px;
 }
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Board from "../Board";
 import Keyboard from "../Keyboard";
-import KeyIcon from "@mui/icons-material/Key";
+import LockIcon from "@mui/icons-material/Lock";
 import { useCodlyContext } from "../../contexts/CodlyContext";
 
 const Main = () => {
@@ -26,7 +26,7 @@ const Main = () => {
     <>
       <div style={{ display: "flex", height: "35px" }}>
         <div style={{ background: "#00af80", height: "30px", width: "30px", borderRadius: "40px", padding: "5px"}}>
-          <KeyIcon fontSize="large" style={{ fontSize: "20px" }} />
+          <LockIcon fontSize="large" style={{ fontSize: "20px" }} />
         </div>
         <h1
           className="center"
@@ -37,7 +37,7 @@ const Main = () => {
       </div>
       <p style={{ textAlign: "center", width: '320px' }}>
         Crack the code. A numeric lock has 3 digit key, from 0 to 9. You
-        have 4 CHANCES. Good Lucky!!!
+        have 4 CHANCES. Pay attention to the hint. Good Lucky!!!
       </p>
       <Board
         emptyCells={emptyCells}

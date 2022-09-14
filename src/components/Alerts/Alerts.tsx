@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import Alert from "@mui/material/Alert";
+// import Alert from "@mui/material/Alert";
 import { AlertsProps } from "./types";
+import * as S from "./StyledAlerts";
 
 const Alerts = ({
   round,
@@ -37,46 +38,41 @@ const Alerts = ({
   return (
     <div style={{ marginTop: "8px" }}>
       {round.length >= 1 && (
-        <Alert
+        <S.Alert
           severity="warning"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
-          padding: "0 10px" }}
+
         >{`Hint: the 3 digits are ${
           hasDistinctNumbers() ? "NOT" : ""
-        } distinct!`}</Alert>
+        } distinct!`}</S.Alert>
       )}
       {round.length >= 1 && isPrime() && (
-        <Alert
+        <S.Alert
           severity="warning"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
-          padding: "0 10px" }}
-        >Hint: the code is prime number!</Alert>
+
+        >Hint: the code is prime number!</S.Alert>
       )}
       {round.length >= 2 && (
-        <Alert
+        <S.Alert
           severity="warning"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
-          padding: "0 10px" }}
-        >{`Hint: first digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</Alert>
+
+        >{`Hint: first digit is ${solution[0] % 2 === 0 ? "even" : "odd"}!`}</S.Alert>
       )}
       {(round.length >= 2 && isFibonacci()) && (
-        <Alert
+        <S.Alert
           severity="warning"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "250px", fontSize: "10px", height: "40px",
-          padding: "0 10px" }}
-        >Hint: second digit belong fibonacci</Alert>
+          style={{ fontSize: "10px" }}
+        >Hint: second digit belong fibonacci</S.Alert>
       )}
       {round.length === 3 && (
-        <Alert
+        <S.Alert
           severity="warning"
           variant="outlined"
-          style={{ marginBottom: "5px", width: "250px", fontSize: "12px", height: "40px",
-          padding: "0 10px" }}
-        >{`Hint: last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</Alert>
+
+        >{`Hint: last digit is ${solution[2] % 2 === 0 ? "even" : "odd"}!`}</S.Alert>
       )}
     </div>
   );

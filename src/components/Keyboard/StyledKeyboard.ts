@@ -34,6 +34,10 @@ export const Key = styled(Box)`
   color: #fff;
   cursor: pointer;
   width: 1.5em;
+  @media (max-width: 414px) {
+    width: auto;
+    font-size: 20px;
+  }
   height: 1.5em;
   margin: 0 4px;
   text-align: center;

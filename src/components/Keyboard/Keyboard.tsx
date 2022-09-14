@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import { middleRow, topRow, bottomRow } from "./constants";
+import { topRow, bottomRow } from "./constants";
 import {  Types } from '../../reducers/reducersCodly';
 import * as S from "./StyledKeyboard";
 
@@ -54,18 +54,6 @@ export default function Keyboard({ dispatchCodly, isGameOver }: {
           </S.Key>
         ))}
       </S.List>
-      <S.List>
-        {middleRow.map((letter) => (
-          <S.Key
-            key={letter}
-            onClick={() => {
-              onKeyboard(letter);
-            }}
-          >
-            {letter}
-          </S.Key>
-        ))}
-      </S.List>
       <S.List style={{ justifyContent: "center" }}>
         {bottomRow.map((letter) => (
           <S.Key
@@ -73,7 +61,7 @@ export default function Keyboard({ dispatchCodly, isGameOver }: {
             onClick={() => {
               onKeyboard(letter);
             }}
-            style={{ width: "90px" }}
+            style={{ width: "125px" }}
           >
             {letter}
           </S.Key>

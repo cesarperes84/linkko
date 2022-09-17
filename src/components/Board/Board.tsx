@@ -32,10 +32,10 @@ const Board = ({
   }, [isGameOver, isSubmitted, nbAttempts, userSolution]);
 
   useEffect(() => {
-    if (round.length === 4 && isSubmitted) {
+    if (round.length === 4 && isSubmitted || !!round.find((item) => item === solution)) {
       dispatchCodly({ type: Types.SetIsGameOver, payload: true });
     }
-  }, [isSubmitted, round, dispatchCodly]);
+  }, [dispatchCodly, isSubmitted, round, solution]);
 
   return (
     <>

@@ -29,7 +29,6 @@ export const Key = styled(Box)`
   font-size: 24px;
   font-weight: bold;
   padding: 2px 7px;
-  background-color: #363636;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -42,4 +41,16 @@ export const Key = styled(Box)`
   margin: 0 4px;
   text-align: center;
   border-radius: 4px;
+  .gray {
+    background-color: #363636;
+  }
+  .lightGray {
+    background-color: #999;
+  }
+  .yellow {
+    background-color: #aa9f00;
+  }
+  .green {
+    background-color: #43aa13 !!important;
+  }
 `;

@@ -51,10 +51,15 @@ const Main = () => {
         dispatchCodly={dispatchCodly}
       />
       <div className="center">
-        <Keyboard
-          isGameOver={isGameOver}
-          dispatchCodly={dispatchCodly}
-        />
+        {solution !== '' &&
+          <Keyboard
+            isSubmitted={isSubmitted}
+            isGameOver={isGameOver}
+            dispatchCodly={dispatchCodly}
+            round={round}
+            solution={solution}
+          />
+        }
       </div>
     </>
   );

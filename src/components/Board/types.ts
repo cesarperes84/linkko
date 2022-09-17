@@ -1,5 +1,10 @@
+export type WordList = {
+  code: string;
+  date: string;
+};
+
 export type BoardProps = {
-  wordList: never[];
+  wordList: WordList;
   solution: any;
   emptyCells: any;
   nbAttempts: number;

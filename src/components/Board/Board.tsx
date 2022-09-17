@@ -1,9 +1,11 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./StyledBoard";
 import BoardItem from "../BoardItem";
 import Alerts from "../Alerts";
-import { Types } from '../../reducers/reducersCodly';
+import { Types } from "../../reducers/reducersCodly";
 import { BoardProps } from "./types";
+import formatDate from "../../utility/formatDate";
+import Share from "../Share";
 
 const Board = ({
   emptyCells,
@@ -13,15 +15,11 @@ const Board = ({
   round,
   solution,
   userSolution,
-  wordList,
   dispatchCodly,
+  wordList,
 }: BoardProps) => {
   const [attempt, setAttempt] = useState(userSolution);
-
-  const wordListMemo = useMemo(() => {
-    wordList.shift();
-    return wordList;
-  }, [wordList]);
+  const today = formatDate({ date: Date.now(), formatString: "yyyy-MM-dd" });
 
   useEffect(() => {
     if (nbAttempts < 1) return;
@@ -32,10 +30,32 @@ const Board = ({
   }, [isGameOver, isSubmitted, nbAttempts, userSolution]);
 
   useEffect(() => {
-    if (round.length === 4 && isSubmitted || !!round.find((item) => item === solution)) {
+    if (
+      (round.length === 4 && isSubmitted) ||
+      !!round.find((item) => item === solution)
+    ) {
+      const statusGame = !!round.find((item) => item === solution)
+        ? "matched"
+        : "gameover";
+      localStorage.setItem("activeStep", round.length.toString());
+      localStorage.setItem("statusGame", statusGame);
       dispatchCodly({ type: Types.SetIsGameOver, payload: true });
     }
   }, [dispatchCodly, isSubmitted, round, solution]);
+
+  useEffect(() => {
+    if (wordList) {
+      if (
+        localStorage.getItem("statusGame") === "matched" ||  localStorage.getItem("statusGame") === "game-over" &&
+        localStorage.getItem("gameDate") === today
+      ) { // já jogou o dia de hoje
+        dispatchCodly({ type: Types.SetIsGameOver, payload: true });
+      } else {
+        localStorage.setItem("statusGame", "started");
+        localStorage.setItem("gameDate", wordList?.date);
+      }
+    }
+  }, [dispatchCodly, wordList, today]);
 
   return (
     <>
@@ -63,7 +83,9 @@ const Board = ({
         </ul>
       </S.Board>
       <Alerts solution={solution} round={round} />
-      {isGameOver && <pre>{solution}</pre>}
+      {isGameOver && (
+        <Share round={round} solution={solution} />
+      )}
     </>
   );
 };

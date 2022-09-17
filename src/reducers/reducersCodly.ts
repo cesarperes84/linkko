@@ -9,8 +9,13 @@ export enum Types {
   SetAnyKey = "SetAnyKey",
 }
 
+export type WordList = {
+  code: string,
+  date: string,
+};
+
 export type StateType = {
-  wordList: never[];
+  wordList: WordList;
   solution: string;
   emptyCells: any;
   nbRows: number;
@@ -41,7 +46,7 @@ export function reducer(state: StateType, action: ActionType) {
     case Types.SetInitialData:
       return {
         ...state,
-        solution: action.payload[0],
+        solution: action.payload.code,
         wordList: action.payload,
       };
       case Types.SetBackspaceKey: {

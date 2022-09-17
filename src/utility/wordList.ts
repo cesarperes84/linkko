@@ -1,1 +1,1 @@
-export const wordList = ["743"];
+export const wordList = { code: "743", date: "2022-09-16" };

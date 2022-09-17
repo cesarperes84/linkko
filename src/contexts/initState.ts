@@ -1,7 +1,10 @@
 import { creatArr } from "../utility/helper";
 
 export const initState = {
-    wordList: [],
+    wordList: {
+      code: '',
+      date: '',
+    },
     solution: '',
     emptyCells: creatArr(3),
     nbRows: 3,

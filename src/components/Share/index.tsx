@@ -11,7 +11,7 @@ export const Share = ({ round, solution }: ShareProps) => {
   const [isCopied, setIsCopied] = React.useState(false);
   const iconsShare = iconsShareUtil(round.length, 'game-over');
 
-  const shareContent = `Codly - Crack the code! 📺 ${iconsShare}`;
+  const shareContent = `Codly - Crack the code! 🔑 ${iconsShare}`;
   const url = "https://carack-the-code.vercel.app";
 
   const handleCopyText = () => {

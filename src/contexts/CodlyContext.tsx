@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo, useReducer, Dispatch, useCallback, } from 'react';
 
-import { wordList } from '../utility/wordList';
+// import { wordList } from '../utility/wordList';
+import { getCode } from '../services/codeServices';
 
 import { initState } from './initState';
 import { ActionType, reducer, StateType, Types } from '../reducers/reducersCodly';
@@ -24,15 +25,15 @@ const CodlyProvider = ({children}: Props): JSX.Element => {
   const [state, dispatchCodly] = useReducer(reducer, initState);
 
   const loadData = useCallback(() => {
-    dispatchCodly({ type: Types.SetInitialData, payload: wordList });
-   /* dispatchCodly({ type: Types.SetStatusResult, payload: 'loading' });
-   wordList()
+   //  dispatchCodly({ type: Types.SetInitialData, payload: wordList });
+   // dispatchCodly({ type: Types.SetStatusResult, payload: 'loading' });
+   getCode()
       .then((response: { data: any; }) => {
-        dispatchCodly({ type: Types.SetResults, payload: response.data  });
+        dispatchCodly({ type: Types.SetInitialData, payload: response.data  });
       })
       .catch(() => {
-        dispatchCodly({ type: Types.SetStatusResult, payload: 'error' });
-      }); */
+        // dispatchCodly({ type: Types.SetStatusResult, payload: 'error' });
+      });
   }, []);
 
   const providerValue = useMemo(() => ({

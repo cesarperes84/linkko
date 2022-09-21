@@ -46,13 +46,15 @@ const Board = ({
   useEffect(() => {
     if (wordList) {
       if (
-        localStorage.getItem("statusGame") === "matched" ||  localStorage.getItem("statusGame") === "game-over" &&
-        localStorage.getItem("gameDate") === today
-      ) { // já jogou o dia de hoje
+        localStorage.getItem("gameDate") === today &&
+        (localStorage.getItem("statusGame") === "matched" ||
+          localStorage.getItem("statusGame") === "game-over")
+      ) {
+        // já jogou o dia de hoje
         dispatchCodly({ type: Types.SetIsGameOver, payload: true });
       } else {
         localStorage.setItem("statusGame", "started");
-        localStorage.setItem("gameDate", wordList?.date);
+        localStorage.setItem("gameDate", today);
       }
     }
   }, [dispatchCodly, wordList, today]);
@@ -83,9 +85,7 @@ const Board = ({
         </ul>
       </S.Board>
       <Alerts solution={solution} round={round} />
-      {isGameOver && (
-        <Share round={round} solution={solution} />
-      )}
+      {isGameOver && <Share round={round} solution={solution} />}
     </>
   );
 };

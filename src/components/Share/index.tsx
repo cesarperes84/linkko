@@ -25,10 +25,6 @@ export const Share = ({ round, solution, statusGame }: ShareProps) => {
     <S.Solution>{solution}</S.Solution>
     <S.Container>
       <S.Paragraph>
-      Crack the code. A numeric lock has 3 digit key, from 0 to 9. You
-        have 4 CHANCES. Pay attention to the hint. Good Lucky!!!
-      </S.Paragraph>
-      <S.Paragraph>
       {isCopied ? (
         'Link copied, now it`s just paste in your social network.'
       ) : (

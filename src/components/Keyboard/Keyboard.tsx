@@ -103,7 +103,7 @@ const handleKeys = useCallback((key: string, solution: string) => {
             onClick={() => {
               onKeyboard(letter, solution);
             }}
-            style={{ width: "125px" }}
+            style={{ width: letter === "Enter" || letter === "←" ? "80px" : '' }}
           >
             {letter}
           </S.Key>

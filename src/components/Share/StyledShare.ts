@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 
 export const Container = styled(Box)`
   padding: 20px;
-  background-color: #fff;
+  background-color: #222;
   box-sizing: border-box;
   border-radius: 5px;
   position: absolute;
@@ -12,7 +12,7 @@ export const Container = styled(Box)`
 `;
 
 export const Paragraph = styled(Box)`
-  color: #4e4e4e;
+  color: #fefefe;
   display: flex;
   font-size: 1rem;
   font-weight: bold;

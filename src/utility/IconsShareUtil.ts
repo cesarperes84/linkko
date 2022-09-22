@@ -7,12 +7,12 @@ export const iconsShareUtil = (activeStep: number, statusGame: string) => {
     iconsWrong = iconsWrong + `🟥`;
   }
 
-  for (let i = 1; i <= 5 - activeStep; i++) {
+  for (let i = 1; i <= 4 - activeStep; i++) {
     iconsRest = iconsRest + `⚪ `;
   }
 
   if (statusGame === "game-over" && activeStep === 4) {
-    icons = `🟥 🟥 🟥 🟥 🟥`;
+    icons = `🟥 🟥 🟥 🟥 `;
   } else if (statusGame === "game-over" && activeStep !== 4) {
     icons = iconsWrong + iconsRest;
   } else if (statusGame === "matched") {

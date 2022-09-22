@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
 export const Container = styled(Box)`
-  padding: 20px 0;
+  padding: 20px;
   background-color: #fff;
   box-sizing: border-box;
   border-radius: 5px;

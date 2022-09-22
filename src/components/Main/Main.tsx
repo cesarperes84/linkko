@@ -35,10 +35,6 @@ const Main = () => {
           Codly
         </h1>
       </div>
-      <p style={{ textAlign: "center", width: '320px' }}>
-        Crack the code. A numeric lock has 3 digit key, from 0 to 9. You
-        have 4 CHANCES. Pay attention to the hint. Good Lucky!!!
-      </p>
       <Board
         emptyCells={emptyCells}
         isSubmitted={isSubmitted}

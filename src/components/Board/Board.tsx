@@ -85,7 +85,7 @@ const Board = ({
         </ul>
       </S.Board>
       <Alerts solution={solution} round={round} />
-      {isGameOver && <Share round={round} solution={solution} />}
+      {isGameOver && <Share round={round} solution={solution} statusGame={localStorage.getItem('statusGame') || 'started'} />}
     </>
   );
 };

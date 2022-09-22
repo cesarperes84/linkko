@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import Board from "../Board";
 import Keyboard from "../Keyboard";
-import LockIcon from "@mui/icons-material/Lock";
+import Header from "../Header";
+import ModalHome from "../ModalHome";
 import { useCodlyContext } from "../../contexts/CodlyContext";
 
 const Main = () => {
@@ -24,17 +25,8 @@ const Main = () => {
 
   return (
     <>
-      <div style={{ display: "flex", height: "35px" }}>
-        <div style={{ background: "#00af80", height: "30px", width: "30px", borderRadius: "40px", padding: "5px"}}>
-          <LockIcon fontSize="large" style={{ fontSize: "20px" }} />
-        </div>
-        <h1
-          className="center"
-          style={{ fontFamily: "'Fugaz One'", fontSize: "26px", fontWeight: "normal", marginLeft: "5px" }}
-        >
-          Codly
-        </h1>
-      </div>
+      <Header />
+      <ModalHome />
       <Board
         emptyCells={emptyCells}
         isSubmitted={isSubmitted}

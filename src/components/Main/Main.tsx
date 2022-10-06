@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Board from "../Board";
 import Keyboard from "../Keyboard";
 import Header from "../Header";
@@ -17,7 +17,8 @@ const Main = () => {
     wordList,
     loadData,
     dispatchCodly,
-   } = useCodlyContext();
+  } = useCodlyContext();
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -26,7 +27,7 @@ const Main = () => {
   return (
     <>
       <Header />
-      <ModalHome />
+      <ModalHome isOpen={isOpen} setIsOpen={setIsOpen} />
       <Board
         emptyCells={emptyCells}
         isSubmitted={isSubmitted}
@@ -39,7 +40,7 @@ const Main = () => {
         dispatchCodly={dispatchCodly}
       />
       <div className="center">
-        {solution !== '' &&
+        {solution !== "" && !isOpen && (
           <Keyboard
             isSubmitted={isSubmitted}
             isGameOver={isGameOver}
@@ -47,7 +48,7 @@ const Main = () => {
             round={round}
             solution={solution}
           />
-        }
+        )}
       </div>
     </>
   );

@@ -45,7 +45,7 @@ const handleKeys = useCallback((key: string, solution: string) => {
     if (/[0-9]/gi.test(key) && key.length === 1) {
       let className = "gray";
       const jogada = state.keyPressed.length + 1;
-      const col = jogada <= 3 ? jogada - 1 : Math.floor(jogada/3);
+      const col = jogada <= 3 ? jogada - 1 : Math.floor((jogada-1)%3);
 
       if (key === solution[col]) {
         className = "green";
@@ -54,9 +54,12 @@ const handleKeys = useCallback((key: string, solution: string) => {
       }  else {
         className = "lightGray";
       }
+
+      const isKeyPressed = state.keyPressed.find((item) => item.key === key);
+      const updateKeyPressed = state.keyPressed.map((item) => item.key === key ? { key, className } : item);
       setState((prevState) => ({
         ...prevState,
-        keyPressed: [...prevState.keyPressed, { key, className }],
+        keyPressed: isKeyPressed ? updateKeyPressed : [...prevState.keyPressed, { key, className }],
       }));
       dispatchCodly({ type: Types.SetAnyKey, payload: key  });
     }

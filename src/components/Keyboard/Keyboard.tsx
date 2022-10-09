@@ -16,20 +16,20 @@ type PropState = {
   keyPressed: KeyProps[],
 }
 
-export default function Keyboard({ dispatchCodly, isGameOver, round, isSubmitted, solution }: {
-  isGameOver: boolean,
+export default function Keyboard({ dispatchCodly, isGameOver, userSolution, isSubmitted, solution }: {
   dispatchCodly: any,
-  round: Array<string>,
+  isGameOver: boolean,
+  userSolution: string,
   isSubmitted: boolean,
   solution: any,
 }) {
   const [state, setState] = useState<PropState>(initState);
 
 const handleKeys = useCallback((key: string, solution: string) => {
-
     if (isGameOver) return;
 
-    if (key === "Enter" && state.keyPressed.length % 3 === 0) {
+    if (key === "Enter" && userSolution.length === 3) {
+      console.log('userSolution.length', userSolution.length);
         dispatchCodly({ type: Types.SetEnterKey });
     }
 
@@ -57,9 +57,10 @@ const handleKeys = useCallback((key: string, solution: string) => {
 
       const isKeyPressed = state.keyPressed.find((item) => item.key === key);
       const updateKeyPressed = state.keyPressed.map((item) => item.key === key ? { key, className } : item);
+
       setState((prevState) => ({
         ...prevState,
-        keyPressed: isKeyPressed ? updateKeyPressed : [...prevState.keyPressed, { key, className }],
+        keyPressed: isKeyPressed ? updateKeyPressed : [{ key, className }, ...prevState.keyPressed],
       }));
       dispatchCodly({ type: Types.SetAnyKey, payload: key  });
     }

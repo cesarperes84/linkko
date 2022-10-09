@@ -1,6 +1,5 @@
 import { createContext, useContext, useMemo, useReducer, Dispatch, useCallback, } from 'react';
 
-// import { wordList } from '../utility/wordList';
 import { getCode } from '../services/codeServices';
 
 import { initState } from './initState';

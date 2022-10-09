@@ -45,7 +45,7 @@ const Main = () => {
             isSubmitted={isSubmitted}
             isGameOver={isGameOver}
             dispatchCodly={dispatchCodly}
-            round={round}
+            userSolution={userSolution}
             solution={solution}
           />
         )}

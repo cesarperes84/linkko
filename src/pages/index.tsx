@@ -7,8 +7,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Codly - Crack the code today!</title>
-        <meta name="description" content="Crack the Password today!" />
+        <title>Connect</title>
+        <meta name="description" content="Connect all the points" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>

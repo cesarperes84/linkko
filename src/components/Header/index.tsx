@@ -1,5 +1,5 @@
 import React from "react";
-import LockIcon from "@mui/icons-material/Lock";
+import CableIcon from "@mui/icons-material/Cable";
 import * as S from "./StyledHeader";
 
 export const Header = () => (
@@ -13,7 +13,7 @@ export const Header = () => (
         padding: "5px",
       }}
     >
-      <LockIcon fontSize="large" style={{ fontSize: "20px" }} />
+      <CableIcon fontSize="large" style={{ fontSize: "20px" }} />
     </div>
     <h1
       className="center"
@@ -22,9 +22,10 @@ export const Header = () => (
         fontSize: "26px",
         fontWeight: "normal",
         marginLeft: "5px",
+        textDecoration: "italic",
       }}
     >
-      Codly
+      Connect.io
     </h1>
   </div>
 );

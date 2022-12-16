@@ -1,21 +1,19 @@
 import Box from "@mui/material/Box";
-import ButtonMui from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 
 export const Container = styled(Box)`
   padding: 20px;
-  background: #4DC7A6;
   box-sizing: border-box;
   border-radius: 5px;
   position: absolute;
-  top: 160px;
+  top: 40px;
   width: 320px;
 `;
 
 export const Paragraph = styled(Box)`
   color: #fefefe;
   display: flex;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
   justify-content: center;
   width: 100%;
@@ -26,8 +24,4 @@ export const Paragraph = styled(Box)`
   }
 `;
 
-export const Button = styled(ButtonMui)`
-  color: #fff;
-  margin-top: 30px;
-`;
 

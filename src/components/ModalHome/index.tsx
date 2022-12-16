@@ -13,9 +13,7 @@ export const ModalHome = ({
     {isOpen && (
       <S.Container>
         <S.Paragraph>
-          Crack the code. A numeric lock has 3 digit key, from 0 to 9. You have
-          4 CHANCES. Pay attention to the HINT.
-          <br /> Good Lucky!!!
+          GO TO NEXT LEVEL
         </S.Paragraph>
         <S.Paragraph>
           <S.Button

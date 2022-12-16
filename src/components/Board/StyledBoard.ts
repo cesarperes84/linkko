@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 export const Board = styled(Box)`
-  margin-top: 10px;
+  margin-top: 120px;
   display: flex;
   justify-content: center;
 `;

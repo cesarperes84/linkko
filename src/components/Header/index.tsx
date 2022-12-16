@@ -6,23 +6,24 @@ export const Header = () => (
   <div style={{ display: "flex", height: "35px" }}>
     <div
       style={{
-        background: "#00af80",
         height: "30px",
         width: "30px",
         borderRadius: "40px",
         padding: "5px",
+        marginRight: "8px",
       }}
     >
-      <CableIcon fontSize="large" style={{ fontSize: "20px" }} />
+      <CableIcon fontSize="large" style={{ fontSize: "40px" }}/>
     </div>
     <h1
       className="center"
       style={{
         fontFamily: "'Fugaz One'",
-        fontSize: "26px",
+        fontSize: "36px",
         fontWeight: "normal",
         marginLeft: "5px",
         textDecoration: "italic",
+        color: "#FFF"
       }}
     >
       Connect.io

@@ -1,3 +1,3 @@
-import Wordle from './Main';
+import Main from './Main';
 
-export default Wordle;
+export default Main;

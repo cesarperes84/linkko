@@ -10,7 +10,7 @@ export const Container = styled(Box)`
   align-items: center;
 `;
 
-export const InnerItem = styled(Box)`
+export const Item = styled(Box)`
   width: 100%;
   height: 100%;
   display: flex;

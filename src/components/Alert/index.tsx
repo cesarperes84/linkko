@@ -1,13 +1,13 @@
 import React from "react";
 import PlayIcon from "@mui/icons-material/PlayArrow";
-import * as S from "./StyledModalHome";
+import * as S from "./StyledAlert";
 
-export const ModalHome = ({
+export const Alert = ({
   isOpen,
-  setIsOpen,
+  play,
 }: {
   isOpen: boolean;
-  setIsOpen: any;
+  play: any;
 }) => (
   <>
     {isOpen && (
@@ -21,7 +21,7 @@ export const ModalHome = ({
             color="success"
             disableElevation
             startIcon={<PlayIcon />}
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={() => play()}
           >
             PLAY
           </S.Button>
@@ -31,4 +31,4 @@ export const ModalHome = ({
   </>
 );
 
-export default ModalHome;
+export default Alert;

@@ -3,17 +3,15 @@ import { iconsShareUtil } from "../../utility/IconsShareUtil";
 import * as S from "./StyledShare";
 
 interface ShareProps {
-  round: Array<string>;
-  solution: string;
-  statusGame: string;
+  level: number;
 }
 
-export const Share = ({ round, solution, statusGame }: ShareProps) => {
+export const Share = ({ level }: ShareProps) => {
   const [isCopied, setIsCopied] = React.useState(false);
-  const iconsShare = iconsShareUtil(round.length, statusGame);
+  const iconsShare = iconsShareUtil(level, 'game-over');
 
-  const shareContent = `Codly - Crack the code! 🔑 ${iconsShare}`;
-  const url = "https://carack-the-code.vercel.app";
+  const shareContent = `Connect.io ${iconsShare}`;
+  const url = "https://connect.io.vercel.app";
 
   const handleCopyText = () => {
     navigator.clipboard.writeText(`${shareContent} ${url}`);
@@ -21,8 +19,6 @@ export const Share = ({ round, solution, statusGame }: ShareProps) => {
   };
 
   return (
-    <>
-    <S.Solution>{solution}</S.Solution>
     <S.Container>
       <S.Paragraph>
       {isCopied ? (
@@ -38,7 +34,6 @@ export const Share = ({ round, solution, statusGame }: ShareProps) => {
       )}
       </S.Paragraph>
     </S.Container>
-    </>
   );
 };
 

@@ -25,18 +25,6 @@ export const Paragraph = styled(Box)`
   }
 `;
 
-export const Solution = styled(Box)`
-  background: #00af80;
-  border-radius: 4px;
-  font-weight: bold;
-  padding: 10px;
-  position: absolute;
-  text-align: center;
-  top: 95px;
-  width: 130px;
-`;
-
-
 export const ShareLink = styled(Box)<{isCopied: boolean}>`
   cursor: pointer;
   text-decoration: underline;

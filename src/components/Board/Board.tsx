@@ -1,41 +1,30 @@
 import React, { useEffect, useState, useId } from "react";
 import * as S from "./StyledBoard";
 import BoardItem from "../BoardItem";
-/*
-import { Types } from "../../reducers/reducersCodly";
-import { BoardProps } from "./types";
-import formatDate from "../../utility/formatDate";
-import Share from "../Share"; */
 
 const Board = ({
   configPositions,
-  level,
-  setConfigPositions,
-  updateConfigPositions,
   isOpen,
+  updateConfigPositions,
 }: {
-  configPositions: any;
-  level: number;
-  setConfigPositions: any;
-  updateConfigPositions: any;
+  configPositions: any,
   isOpen: boolean;
+  updateConfigPositions: any;
 }) => {
   const id = useId();
-  // console.log('configPositions', configPositions);
+
   return (
     <>
       <S.Board>
         <ul>
-          {configPositions.map((row, j) => (
+          {configPositions.map((row: { pos: number; status: boolean; rotation: number; }[], j: number) => (
             <li className="d-flex" key={`${id}-${j}`}>
-              {row.map((item, index) => {
-                // if (item.pos !== 0) {console.log('item', item);}
+              {row.map((item: { pos: any; status: boolean; rotation: number; }, index: number) => {
                 return (
                   <BoardItem
                     isOpen={isOpen}
-                    level={level}
                     key={`${id}-${j}-${index}`}
-                    item={item?.pos}
+                    pos={item?.pos}
                     row={j}
                     col={index}
                     status={item?.status}
@@ -48,8 +37,6 @@ const Board = ({
           ))}
         </ul>
       </S.Board>
-      {/*
-      {isGameOver && <Share round={round} solution={solution} statusGame={localStorage.getItem('statusGame') || 'started'} />} */}
     </>
   );
 };

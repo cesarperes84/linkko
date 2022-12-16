@@ -1,34 +1,24 @@
 
-
-
 export enum Types {
-  SetIsGameOver = "setIsGameOver",
-  SetInitialData = "SetInitialData",
-  SetBackspaceKey = "SetBackspaceKey",
-  SetEnterKey = "SetEnterKey",
-  SetAnyKey = "SetAnyKey",
+  SetGameOver = "SetGameOver",
+  SetUpdateConfigPositions = "SetUpdateConfigPositions",
+  SetIsOpen = "SetIsOpen",
+  SetPlay = "SetPlay",
 }
 
-export type WordList = {
-  code: string,
-  date: string,
-};
+export type Item = {
+  pos: number;
+  status: boolean;
+  rotation: number;
+}
+
+export type Positions = Item[];
 
 export type StateType = {
-  wordList: WordList;
-  solution: string;
-  emptyCells: any;
-  nbRows: number;
-  nbCols: number;
-  nbAttempts: number;
-  round: Array<string>;
-  isGameOver: boolean;
-  isSubmitted: boolean;
-  userSolution: string;
-  isUserSolutionValidLen: boolean;
-  isUserSolutionInWordList: boolean;
-  rowIndex: number;
-  colIndex: number;
+  level: number,
+  isOpen: boolean,
+  isGameOver: boolean,
+  configPositions: Positions[],
 };
 
 export type ActionType = {
@@ -38,51 +28,27 @@ export type ActionType = {
 
 export function reducer(state: StateType, action: ActionType) {
   switch (action.type) {
-    case Types.SetIsGameOver:
+    case Types.SetGameOver:
       return {
         ...state,
-        isGameOver: action.payload,
+        isGameOver: !state.isGameOver,
       };
-    case Types.SetInitialData:
+    case Types.SetIsOpen:
       return {
         ...state,
-        solution: action.payload.code,
-        wordList: action.payload,
+        isOpen: !state.isOpen,
       };
-      case Types.SetBackspaceKey: {
+    case Types.SetPlay:
+      return {
+        ...state,
+        isOpen: !state.isOpen,
+        configPositions: action.payload.configPositions,
+        level: action.payload.level,
+      };
+      case Types.SetUpdateConfigPositions: {
         return {
           ...state,
-          userSolution: state.userSolution.slice(0, -1) + "",
-            isSubmitted: false,
-        };
-      };
-      case Types.SetAnyKey: {
-        return {
-          ...state,
-          userSolution:
-              state.userSolution.slice(0, state.nbCols) +
-              action.payload.toLowerCase(),
-            isSubmitted: false,
-        };
-      };
-      case Types.SetEnterKey: {
-        const isUserSolutionInWordList = true;
-        const isUserSolutionValidLen =
-          state.userSolution.length >= 3;
-
-        let isValidSolution = [
-          isUserSolutionInWordList,
-          isUserSolutionValidLen,
-        ];
-
-        let isValid = isValidSolution.every((v) => v);
-
-        return {
-          ...state,
-          userSolution: isValid ? "" : state.userSolution,
-          rowIndex: isValid ? state.rowIndex + 1 : state.rowIndex,
-          round: [...state.round, state.userSolution],
-          isSubmitted: true,
+          configPositions: action.payload,
         };
       };
     default:

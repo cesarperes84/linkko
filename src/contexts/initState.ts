@@ -1,21 +1,8 @@
-import { creatArr } from "../utility/helper";
+import configInitialsPositions from "../const";
 
 export const initState = {
-    wordList: {
-      code: '',
-      date: '',
-    },
-    solution: '',
-    emptyCells: creatArr(3),
-    nbRows: 3,
-    nbCols: 3,
-    nbAttempts: 6,
-    round: [],
+    level: 0,
+    isOpen: false,
     isGameOver: false,
-    isSubmitted: false,
-    userSolution: '',
-    isUserSolutionValidLen: false,
-    isUserSolutionInWordList:false,
-    rowIndex: 0,
-    colIndex: 0,
+    configPositions: configInitialsPositions[0],
   }

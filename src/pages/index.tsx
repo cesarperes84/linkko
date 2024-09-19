@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Connect</title>
         <meta name="description" content="Connect all the points" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={styles.main}>
         <Main />
